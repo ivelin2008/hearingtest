@@ -1,0 +1,390 @@
+@import 'variables';
+@import 'functions';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+body {
+    background: $body-bg;
+    font-family: $main-font;
+    text-align: center;
+}
+
+a {
+    color: #333;
+}
+
+.container {
+    max-width: $container;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 29em)) 1fr;
+    }
+
+// Top Bar
+#top-bar {
+    .container {
+        grid-column: 2/4;
+    }
+    h1 {
+        font-size: 1.7em;
+        padding: 0.2em;
+        color: $font-color;
+        span {
+            color: $secondary-color;
+        }
+    }
+    p {
+        padding-bottom: 1em;
+        color: $font-color;
+    }
+}
+
+// Header
+#showcase {
+    min-height: 450px;
+    background: url('/assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// The Form
+.form-container {
+    grid-column: 2/4;
+    background: #fff;
+    margin: 1.2em;
+    padding: 0.5em;
+    border: 0.25em solid #ffcf47;
+    border-radius: 8px;
+    label.main-label {
+        display: block;
+        color: $secondary-color;
+        font-weight: bold;
+        padding: 0.5em;
+    }
+    .border {
+        border: 0.05em solid rgb(196, 196, 196);
+        border-radius: 5px;
+    }
+    .checkbox {
+        @extend .border;
+        text-align: left;
+        height: 45px;
+        // padding: 5px 1em;
+        margin: 10px;
+        cursor: pointer;
+        p {
+            text-align: left;
+            display: inline-block;
+            position: relative;
+            bottom: 4px;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        .tiny-box {
+            margin: 12px 10px 0px 12px;
+            display: inline-block;
+            width: 19px;
+            height: 19px;
+            @extend .border;
+            border-radius: 3px;
+        }
+    }
+    #button1 {
+        height: 50px;
+        width: 95%;
+        border: 1px solid #ff8d00;
+        border-radius: 8px;
+        color: white;
+        font-size: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        outline: none;
+        background: #f07e04; /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient($button-color); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient($button-color); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient($button-color); /* For Firefox 3.6 to 15 */
+        background: linear-gradient($button-color); /* Standard syntax (must be last) */
+    }
+    #button2 {
+        @extend #button1;
+        &:hover {
+            cursor: pointer;
+            background: #f07e04;
+            background: -webkit-linear-gradient(#ff9b1f, #fb8200); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(#ff9b1f, #fb8200); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(#ff9b1f, #fb8200); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(#ff9b1f, #fb8200); /* Standard syntax (must be last) */
+        }
+    }
+
+    // Email Form
+    #emailform {
+        padding: 15px;
+        height: 240px;
+        .checkbox {
+            display: inline-block;
+            width: 96%;
+            // padding: 0px 30px;
+            // margin: 10 auto;
+            margin: 10px 0;
+            padding-left: 15px;
+        }
+        .email_label {
+            text-align: left;
+            font-weight: bold;
+            float: left;
+            margin-top: 10px;
+        }
+        input {
+            width: 90%;
+            height: 98%;
+            font-size: 1.1em;
+            line-height: 20px;
+            outline: none;
+            border: none;
+            background: none;
+        }
+    }
+
+    #progressbar {
+        height: 20px;
+        width: 95%;
+        background-color: #f3f3f3;
+        display: block;
+        margin: 15px auto;
+        border: 1px solid #e2e2e2;
+        border-radius: 4px;
+    }
+    #innerbar {
+        height: 20px;
+        width: 1%;
+        background-color: #a4cf75;
+        font-size: 10px;
+        .fiftypercent {
+            width: 50%;
+        }
+    }
+    #progresstext {
+        margin-top: -32px;
+        font-size: 0.7em;
+    }
+    #lock {
+        display: inline-block;
+        margin-top: 15px;
+    }
+    #securetext {
+        display: inline-block;
+        position: relative;
+        bottom: 3px;
+        font-style: italic;
+        color: #3fa33a;
+        }
+    
+}
+.hidden {
+    display: none;
+}
+.small-text {
+    font-size: 0.7em;
+}
+
+// Section A
+#section-a {
+    background-color: $primary-color;
+    color: white;
+    padding: 20px;
+    .container {
+        grid-column: 2/4;
+        h2 {
+           padding: 15px;
+        }
+        span {
+            color: $secondary-color;
+        }
+        ul {
+            list-style: none;
+            li {
+                padding: 10px;
+            }
+            img {
+                padding: 15px;
+            }
+        }
+    }
+}
+
+#section-b {
+    .container {
+        padding-top: 10px;
+        grid-column: 2/4;
+    }
+    h2 {
+        color: $secondary-color;
+        padding: 15px;
+    }
+    img {
+        padding: 20px 15px;
+        height: auto; 
+        width: auto; 
+        max-width: 200px;
+    }
+}   
+
+// Footer 
+#main-footer {
+    padding: 25px;
+    p {
+        @extend .small-text;
+        color: #7b7b7d;
+        font-style: italic;
+    }
+    a {
+        color: $secondary-color;
+    }
+}
+
+
+
+// Media Queries
+@media(min-width: 700px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 34em)) 1fr;
+    }
+
+    // Top Bar fix
+    #top-bar {
+        position: relative;
+        .container {
+            display: block;
+            width: 95%;
+            grid-column: 2/4;
+            text-align: right;
+            p {
+                padding-right: 90px;
+            }
+        }
+    }
+
+    // Header
+    .form-container {
+        grid-column: 3/4;
+    }
+
+    // Section A
+    #section-a {
+        .container {
+            padding: 10px 0 25px 0;
+            margin: 0;
+            ul {
+                display: flex;
+                justify-content: space-around;
+            }
+            li {
+                width: 31%;
+            }
+            img {
+            width: 136px; /* you can use % */
+            height: 118px;
+            }
+        }
+    }
+
+    #section-b {
+        .container {
+            margin: 0;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// header#main-header {
+//     padding: 1em;
+//     background: $primary-color;
+//     color: set-text-color($primary-color);
+
+//     h1 {
+//         font-size: 40px;
+//     }
+// }
+
+// nav#main-nav {
+//     background: $secondary-color;
+//     height: 40px;
+//     ul {
+//         list-style: none;
+//         padding-top: 10px;
+//     }
+
+//     li {
+//         display: inline;
+//     }
+
+//     a {
+//         color: #fff;
+//         padding-right: 20px;
+//         &:hover {
+//             color: #ccc;
+//         }
+//     }
+// }
+
+// .section {
+//     padding: $section-padding;
+
+//     h1 {
+//         margin-bottom: 30px;
+//     }
+// }
+
+// #section-a {
+//     @extend .section;
+//     background: $light-color;
+//     color: set-text-color($light-color);
+// }
+
+// #section-b {
+//     @extend .section;
+//     background: $dark-color;
+//     color: set-text-color($dark-color);
+// }
+
+// .button {
+//     padding: 10px 15px;
+// }
+
+// .button-a {
+//     @extend .button;
+//     background: darken($primary-color, 10%);
+//     color: set-text-color($primary-color);
+// }
+
+// .button-b {
+//     @extend .button;
+//     background: lighten($secondary-color, 10%);
+//     color: set-text-color($secondary-color);
+// }
